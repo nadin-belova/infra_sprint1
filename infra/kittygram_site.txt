@@ -1,0 +1,5 @@
+IP: 158.160.73.84;
+name_taski: https://nadin.hopto.org;
+name_kittygram: https://kittygram2023kitty.hopto.org;
+login: admin;
+password: admin; 
