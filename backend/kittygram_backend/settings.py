@@ -9,11 +9,17 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY')
 
-DEBUG = False
+SECRET_KEY = os.getenv('SECRET_KEY', 'default_secret_key')
+DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
 
-ALLOWED_HOSTS = ['158.160.73.84','127.0.0.1', 'localhost', 'kittygram2023kitty.hopto.org']
+
+ALLOWED_HOSTS = [
+    '158.160.73.84',
+    '127.0.0.1',
+    'localhost',
+    'kittygram2023kitty.hopto.org',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -96,8 +102,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-#STATIC_URL = '/static/'
-#STATIC_ROOT = BASE_DIR / 'static_backend'
 STATIC_URL = 'static_backend'
 STATIC_ROOT = BASE_DIR / 'static_backend'
 
